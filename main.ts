@@ -1,7 +1,5 @@
 import express =  require("express");
 
-const PORT = 3000
-
 export class Calculadora {
     sumar (op1 : number, op2 : number) : number {
         return op1 + op2
@@ -30,8 +28,11 @@ let main = () =>
     })
 
     // Iniciamos la ejecucion del server
-    app.listen(PORT, ()=>{
-        console.log(`Server running in port ${PORT}`);
+
+    let puerto = process.env.PORT || 3000
+
+    app.listen(puerto, ()=>{
+        console.log(`Server running in port ${puerto}`);
     })
 }
 
